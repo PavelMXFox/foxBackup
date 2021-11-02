@@ -106,13 +106,15 @@ rm -f $prefix/$stamp/*
 rmdir $prefix/$stamp
 
 # Sending data
-
-for xfile_item in `ls ${prefix}/compressed`
-do
-    scp -B -i ${sshkey} ${prefix}/compressed/${xfile_item} ${sshuser}@${sshhost}:${sshpath} > /dev/null
-    if [ "$?" == 0 ]
-    then
-	rm -f ${prefix}/compressed/${xfile_item}
-    fi
-done
+if [ -n "${sshhost}" ]
+then
+	for xfile_item in `ls ${prefix}/compressed`
+	do
+	    scp -B -i ${sshkey} ${prefix}/compressed/${xfile_item} ${sshuser}@${sshhost}:${sshpath} > /dev/null
+	    if [ "$?" == 0 ]
+	    then
+		rm -f ${prefix}/compressed/${xfile_item}
+	    fi
+	done
+fi
 
