@@ -1,0 +1,9 @@
+sqldump_prefix="docker exec -t db mysqldump"
+sql_list="dbname dbname2 dbname3:table:table"
+files_list="/path/to/folder1 /path/to/folder/2"
+prefix='/path_to_temp_folder';
+sshhost='host';
+sshport=22;
+sshuser='login';
+sshkey='/path_to_ssh_private_key';
+sshpath='/media/hdd2/backup';
