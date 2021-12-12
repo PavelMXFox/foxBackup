@@ -1,0 +1,6 @@
+prefix='/mnt/backups';
+# 26Hrs
+dailySecMax=936000;
+# 34Days
+fullSecMax=29376000;
+

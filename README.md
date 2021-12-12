@@ -1,13 +1,13 @@
 # foxBackup
 
-### keys 
+## keys 
 
 -f = full backup (if not = increment)
 
 -q - suppress logs output
 
 
-### config options
+## config options
 
 sqldump_prefix="docker exec -t db mysqldump" = prefix for sqldump
 
@@ -27,3 +27,13 @@ sshkey='/path_to_ssh_private_key';
 
 sshpath='/media/hdd2/backup'; = remote path for SCP store
 
+# Check
+
+Run at backup storage, checks expired backups in all forders with prefix backup- in ``prefix`` folder.
+
+All deltas calculated from file names!
+
+## Config
+prefix='/mnt/backups'; # Storage prefix
+dailySecMax=936000; # DailyDelta in seconds
+fullSecMax=29376000; # FullDelta in seconds
