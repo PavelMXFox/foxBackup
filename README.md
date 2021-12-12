@@ -34,6 +34,9 @@ Run at backup storage, checks expired backups in all forders with prefix backup-
 All deltas calculated from file names!
 
 ## Config
+
 prefix='/mnt/backups'; # Storage prefix
+
 dailySecMax=936000; # DailyDelta in seconds
+
 fullSecMax=29376000; # FullDelta in seconds
