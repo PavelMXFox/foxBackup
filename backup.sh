@@ -6,7 +6,7 @@ DIRECTORY=`dirname "$ABSOLUTE_FILENAME"`
 source ${DIRECTORY}/config
 
 uuid=`uuid`
-stamp=`date +"%Y%m%d-%H%M%S-I"`
+stamp=`date +%s`-`date +"%Y%m%d-%H%M%S-I"`
 do_full=""
 do_quet=0
 
@@ -27,7 +27,7 @@ then
         echo "Full backup started"
     fi
 
-    stamp=`date +"%Y%m%d-%H%M%S-F"`
+    stamp=`date +%s`-`date +"%Y%m%d-%H%M%S-F"`
     rm -f ${prefix}/incremental/*
 fi
 
