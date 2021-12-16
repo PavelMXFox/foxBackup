@@ -6,7 +6,16 @@ DIRECTORY=`dirname "$ABSOLUTE_FILENAME"`
 source ${DIRECTORY}/config
 currStamp=`date +%s`
 
-for backup_dir in `ls -d ${prefix}/backup-*`
+list=`ls -d ${prefix}/backup-*`
+
+if [ "$?" != 0 ]
+then
+    echo "FAIL - Directory listnig failed!"
+    exit
+fi
+
+
+for backup_dir in ${list}
 do
     echo Directory ${backup_dir}:
     lastFull=`cd ${backup_dir}/ && ls -t *-[F].t* 2>/dev/null | head -n 1`
